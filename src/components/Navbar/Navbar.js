@@ -15,7 +15,7 @@ export default function Navbar() {
       <h3 className={styles.name}>Learning Languages App</h3>
       <div className={styles.info}>
         <Card className={styles.sum}>
-          Your points: {Math.abs(totalPrice).toFixed(2)}
+          You know {Math.abs(totalPrice).toFixed(0)} words
         </Card>
         <Button
           onClick={() => {
