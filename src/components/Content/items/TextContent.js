@@ -11,24 +11,32 @@ export default function TextContent() {
   };
   const WordsToLinks = () => {
     return (
-      <div className={styles.xyz}>
-        {textSplitOnWords.map((word) => {
-          if (word === " " || word === "") return "";
-          if (word.length % 2 === 0) {
-            return (
-              <button className="known" onClick={() => wordHandler(word)}>
-                {word}{" "}
-              </button>
-            );
-          } else {
-            return (
-              <button className="unknown" onClick={() => wordHandler(word)}>
-                {word}{" "}
-              </button>
-            );
-          }
-        })}
-      </div>
+      <>
+        <div className={styles.xyz}>
+          {textSplitOnWords.map((word) => {
+            if (word === " " || word === "") return "";
+            if (word.length % 2 === 0) {
+              return (
+                <>
+                  <button className="known" onClick={() => wordHandler(word)}>
+                    {word.trim()}{" "}
+                  </button>
+                  {word.includes("\n") && <br />}
+                </>
+              );
+            } else {
+              return (
+                <>
+                  <button className="unknown" onClick={() => wordHandler(word)}>
+                    {word.trim()}{" "}
+                  </button>
+                  {word.includes("\n") && <br />}
+                </>
+              );
+            }
+          })}
+        </div>
+      </>
     );
   };
   const isHidden = useSelector((state) => state.cart.hide);

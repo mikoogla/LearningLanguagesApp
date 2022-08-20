@@ -32,6 +32,11 @@ button {
   all: unset;
   cursor: pointer;
 }
+br {
+  display: block; /* makes it have a width */
+  content: " "; /* clears default height */
+  margin-top: 50px; /* change this to whatever height you want it */
+}
 a {
   text-decoration: none;
   color: #c9d1d9;
