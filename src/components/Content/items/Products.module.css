@@ -3,7 +3,7 @@
   display: grid;
   grid-gap: 15px;
   grid-template-columns: auto auto;
-  background-color: #79bea8;
+  background-color: #0d1117;
   overflow: hidden;
 }
 @media (max-width: 1000px) {

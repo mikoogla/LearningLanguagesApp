@@ -6,8 +6,8 @@
   margin: 0;
   overflow: hidden;
   width: 95%;
-  background-color: #448d76;
-  color: #093426;
+  background-color: #010409;
+  color: #c9d1d9;
 }
 .buttonsContainer {
   width: 40%;
@@ -19,8 +19,8 @@
   gap: 10px;
 }
 .button {
-  background-color: #093426 !important;
-  color: #448d76 !important;
+  background-color: #161b22 !important;
+  color: #c9d1d9 !important;
   border: none !important;
   align-items: center;
   text-align: center;
