@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #093426;
+  color: #fff;
+  padding: 15px;
+}
+.button {
+  background-color: #79bea8;
+  color: #093426;
+  border-color: #272727;
+}
+.name {
+  margin: 0;
+}
+.sum {
+  margin: 0;
+  padding: 8px 18px;
+  background-color: #e7f3ef;
+  color: #093426;
+  text-align: center;
+}
+.info {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 340px) {
+  .name {
+    display: none;
+  }
+  .info {
+    flex-direction: column;
+    width: 80%;
+  }
+  .main {
+    justify-content: center;
+  }
+  .sum {
+    justify-content: center;
+  }
+}
