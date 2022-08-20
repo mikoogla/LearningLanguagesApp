@@ -4,7 +4,7 @@ import Product from "../../Product/Product";
 import Card from "../../UI/Card/Card";
 import styles from "./Styles.module.css";
 
-export default function Cart() {
+export default function TextContent() {
   const cart = useSelector((state) => state.cart.products);
   const cartSize = useSelector((state) => state.cart.size);
   const isHidden = useSelector((state) => state.cart.hide);
