@@ -13,9 +13,7 @@ export default function Navbar() {
     <div className={styles.main}>
       <h3 className={styles.name}>Learning Languages App</h3>
       <div className={styles.info}>
-        <Card className={styles.sum}>
-          You know {Math.abs(totalPrice).toFixed(0)} words
-        </Card>
+        <Card className={styles.sum}>You know {535} words</Card>
         <Button
           onClick={() => {
             dispatch(toggleCart());

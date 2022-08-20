@@ -24,6 +24,19 @@ export default function TextContent() {
                   {word.includes("\n") && <br />}
                 </>
               );
+            }
+            if (word.length % 5 === 0) {
+              return (
+                <>
+                  <button
+                    className="uncertain"
+                    onClick={() => wordHandler(word)}
+                  >
+                    {word.trim()}{" "}
+                  </button>
+                  {word.includes("\n") && <br />}
+                </>
+              );
             } else {
               return (
                 <>
@@ -42,7 +55,8 @@ export default function TextContent() {
 
   return (
     <Card className={styles.content}>
-      <h2>You will see your text here</h2>
+      <h1>Ardenti Rubi</h1>
+      <h2>Liber Exodus</h2>
       <Card className={styles.textcontainer}>{WordsToLinks()}</Card>
     </Card>
   );
