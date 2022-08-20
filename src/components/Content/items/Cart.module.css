@@ -1,14 +1,10 @@
 .cart {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   grid-gap: 15px;
-  grid-template-columns: auto auto;
+  min-width: 40%;
   background-color: #161b22;
-  color: #010409;
+  color: #c9d1d9;
   overflow: hidden;
-}
-@media (max-width: 1000px) {
-  .cart {
-    display: flex;
-    flex-direction: column;
-  }
 }

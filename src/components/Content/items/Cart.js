@@ -24,8 +24,7 @@ export default function Cart() {
             )
           ) : (
             <div>
-              <h2>The Cart is empty</h2>
-              <h3>Add your first item</h3>
+              <h2>Your text will be here</h2>
             </div>
           )}
         </Card>
