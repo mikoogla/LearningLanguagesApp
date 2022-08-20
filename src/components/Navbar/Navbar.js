@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <div className={styles.main}>
-      <h3 className={styles.name}>Yerba Mate Shop</h3>
+      <h3 className={styles.name}>Learning Languages App</h3>
       <div className={styles.info}>
         <Card className={styles.sum}>
           Total: {Math.abs(totalPrice).toFixed(2)} PLN
