@@ -1,10 +1,17 @@
-.cart {
+.content {
+  min-height: 90%;
+  min-width: 45vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   grid-gap: 15px;
-  min-width: 40%;
+  margin: 2.5% 2.5vw;
   background-color: #161b22;
   color: #c9d1d9;
   overflow: hidden;
 }
+/* @media (max-width: 1000px) {
+  .cart {
+    margin: 10px 0;
+  }
+} */

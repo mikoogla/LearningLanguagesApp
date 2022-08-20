@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Product from "../../Product/Product";
 import Card from "../../UI/Card/Card";
-import styles from "./Cart.module.css";
+import styles from "./Styles.module.css";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart.products);
@@ -13,7 +13,7 @@ export default function Cart() {
   return (
     <>
       {!isHidden && (
-        <Card className={styles.cart}>
+        <Card className={styles.content}>
           {cartSize > 0 ? (
             loading ? (
               <h1>Loading</h1>
@@ -24,7 +24,7 @@ export default function Cart() {
             )
           ) : (
             <div>
-              <h2>Your text will be here</h2>
+              <h2>You will see your text here</h2>
             </div>
           )}
         </Card>

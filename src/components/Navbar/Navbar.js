@@ -23,7 +23,7 @@ export default function Navbar() {
           }}
           className={styles.button}
         >
-          Cart {cartSize}
+          Menu
         </Button>
       </div>
     </div>

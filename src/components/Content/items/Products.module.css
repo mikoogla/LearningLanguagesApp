@@ -1,9 +1,0 @@
-.content {
-  /*if sth goes wrong, paste flex-direction: column here */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  grid-gap: 15px;
-  background-color: #0d1117;
-  overflow: hidden;
-}
