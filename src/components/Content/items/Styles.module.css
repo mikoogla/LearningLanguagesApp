@@ -11,10 +11,23 @@
   overflow: hidden;
 }
 .button {
-  background-color: #0d1117;
+  background-color: #010409;
   color: #c9d1d9;
   border-color: #272727;
 }
+.textcontainer {
+  width: 90%;
+  min-height: 80%;
+  background-color: #01040981 !important;
+  border: none;
+  padding: 20px;
+  align-items: flex-start;
+  text-align: justify;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-indent: 15px;
+}
+
 /* @media (max-width: 1000px) {
   .cart {
     margin: 10px 0;
