@@ -3,26 +3,28 @@ import { useSelector } from "react-redux";
 import Card from "../../UI/Card/Card";
 import styles from "./Styles.module.css";
 import text from "./SampleText.js";
-console.log(text);
 const textSplitOnWords = text.split(" ");
-console.log(textSplitOnWords);
 
 export default function TextContent() {
+  const wordHandler = (word) => {
+    console.log(word.trim().replace(/[., ]/, "").toLowerCase());
+  };
   const WordsToLinks = () => {
     return (
-      <div>
+      <div className={styles.xyz}>
         {textSplitOnWords.map((word) => {
+          if (word === " " || word === "") return "";
           if (word.length % 2 === 0) {
             return (
-              <a className="known" href={word}>
+              <button className="known" onClick={() => wordHandler(word)}>
                 {word}{" "}
-              </a>
+              </button>
             );
           } else {
             return (
-              <a className="unknown" href={word}>
+              <button className="unknown" onClick={() => wordHandler(word)}>
                 {word}{" "}
-              </a>
+              </button>
             );
           }
         })}
