@@ -32,10 +32,21 @@
   border: 0.5px solid;
   border-color: rgba(118, 118, 118, 0.281);
 }
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 @media (max-width: 768px) {
   .text {
     width: 90%;
     height: 50%;
+  }
+  .buttonContainer {
+    flex-direction: column;
   }
   .button {
     width: 50%;

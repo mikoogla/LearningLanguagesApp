@@ -3,10 +3,10 @@ import noteSlice from "./noteSlice";
 
 const store = configureStore({
   reducer: {
-    note: noteSlice.reducer,
+    notes: noteSlice.reducer,
   },
 });
 
-export const { replaceCart, addProduct, removeProduct, toggleCart } =
+export const { addNote, removeNote, toggleNote, hideNewNote } =
   noteSlice.actions;
 export default store;

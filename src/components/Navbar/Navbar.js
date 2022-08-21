@@ -2,12 +2,11 @@ import React from "react";
 import Button from "../UI/Button/Button";
 import styles from "./Navbar.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCart } from "../../store/index.js";
+import { toggleNote } from "../../store/index.js";
 import Card from "../UI/Card/Card";
 
 export default function Navbar() {
   const dispatch = useDispatch();
-  const totalPrice = useSelector((state) => state.note.total);
 
   return (
     <div className={styles.main}>
@@ -16,7 +15,7 @@ export default function Navbar() {
         <Card className={styles.sum}>You know {535} words</Card>
         <Button
           onClick={() => {
-            dispatch(toggleCart());
+            dispatch(toggleNote());
           }}
           className={styles.button}
         >
