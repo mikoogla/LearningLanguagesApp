@@ -1,0 +1,43 @@
+.main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.705);
+}
+.text {
+  color: #c9d1d9;
+  width: 50%;
+  height: 20%;
+  background-color: #010409;
+  border-radius: 5px;
+  border: 0.5px solid;
+  border-color: rgba(118, 118, 118, 0.281);
+}
+.text:focus,
+.text:active {
+  background-color: #010409;
+}
+.button {
+  background-color: #010409;
+  color: #c9d1d9;
+  border-color: #272727;
+  border-radius: 5px;
+  border: 0.5px solid;
+  border-color: rgba(118, 118, 118, 0.281);
+}
+@media (max-width: 768px) {
+  .text {
+    width: 90%;
+    height: 50%;
+  }
+  .button {
+    width: 50%;
+  }
+}

@@ -3,7 +3,6 @@ import Content from "./components/Content/Content";
 import Navbar from "./components/Navbar/Navbar";
 import styles from "./App.module.css";
 import Footer from "./components/Footer/Footer";
-import CartSync from "./sync/CartSync";
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <CartSync />
         <Content />
       </main>
       <footer>
