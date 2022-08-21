@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "../../UI/Card/Card";
 import styles from "./Styles.module.css";
-import text from "./SampleText.js";
+import text from "../SampleText.js";
 const textSplitOnWords = text.split(" ");
 
 export default function TextContent() {

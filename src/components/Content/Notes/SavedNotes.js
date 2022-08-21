@@ -11,7 +11,7 @@ export default function SavedNotes() {
     !isHidden && (
       <Card className={styles.content}>
         <h2>Saved notes will be here</h2>
-        <Button className={styles.button}>Add Text</Button>
+        <Button className={styles.button}>New Note</Button>
       </Card>
     )
   );
