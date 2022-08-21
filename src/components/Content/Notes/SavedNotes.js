@@ -6,7 +6,7 @@ import NewNote from "./NewNote/NewNote";
 import styles from "./Styles.module.css";
 
 export default function SavedNotes() {
-  const isHidden = useSelector((state) => state.cart.hide);
+  const isHidden = useSelector((state) => state.note.hide);
   const [ShowNewNote, setShowNewNote] = useState(false);
   const NewNoteHandler = () => {
     setShowNewNote(!ShowNewNote);

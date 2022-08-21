@@ -7,7 +7,7 @@ import Card from "../UI/Card/Card";
 
 export default function Navbar() {
   const dispatch = useDispatch();
-  const totalPrice = useSelector((state) => state.cart.total);
+  const totalPrice = useSelector((state) => state.note.total);
 
   return (
     <div className={styles.main}>
