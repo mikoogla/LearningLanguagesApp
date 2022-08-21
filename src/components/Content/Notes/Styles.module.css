@@ -6,6 +6,7 @@
   justify-content: flex-start;
   grid-gap: 15px;
   margin: 2.5% 2.5vw;
+  padding: 20px 0;
   background-color: #0d1117;
   color: #c9d1d9;
   overflow: hidden;
@@ -26,42 +27,4 @@
   word-wrap: break-word;
   white-space: pre-wrap;
   text-indent: 15px;
-}
-h1,
-h2 {
-  margin: 0 20px;
-}
-button {
-  all: unset;
-  cursor: pointer;
-}
-br {
-  display: block; /* makes it have a width */
-  content: " "; /* clears default height */
-  margin-top: 50px; /* change this to whatever height you want it */
-}
-a {
-  text-decoration: none;
-  color: #c9d1d9;
-}
-button[class="known"] {
-  color: rgb(191, 243, 191);
-}
-button[class="unknown"] {
-  color: rgb(236, 182, 182);
-}
-button[class="uncertain"] {
-  color: rgb(240, 226, 149);
-}
-button[class="known"]:hover {
-  color: green;
-  background-color: rgba(255, 255, 255, 0.027);
-}
-button[class="unknown"]:hover {
-  color: red;
-  background-color: rgba(255, 255, 255, 0.027);
-}
-button[class="uncertain"]:hover {
-  color: rgb(255, 230, 0);
-  background-color: rgba(255, 255, 255, 0.027);
 }
