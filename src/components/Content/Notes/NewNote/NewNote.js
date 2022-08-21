@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../../UI/Button/Button";
 import { useDispatch } from "react-redux";
-import { hideNewNote } from "../../../../store";
+import { hideNewNote, addNote } from "../../../../store";
 import TextArea from "../../../UI/TextArea/TextArea";
 import styles from "./NewNote.module.css";
 import Input from "../../../UI/Input/Input";
@@ -16,7 +16,8 @@ export default function NewNote() {
   const handleSave = (event) => {
     event.preventDefault();
     dispatch(hideNewNote());
-    console.log("saving " + value + " " + title);
+    console.log("saving... title: ", title, "text: ", value);
+    dispatch(addNote({ title: title, text: value }));
   };
   return (
     <form onSubmit={handleSave}>

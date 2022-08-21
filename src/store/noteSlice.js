@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initial_notes = {
-  products: [],
+  notes: [],
   hide: false,
   hideNewNote: true,
 };
@@ -11,7 +11,8 @@ const noteSlice = createSlice({
   initialState: initial_notes,
   reducers: {
     addNote: (state, action) => {
-      console.log("adding  note: ");
+      state.notes.push(action.payload);
+      console.log("new note added, title: " + action.payload.title);
     },
     removeNote: (state, action) => {
       console.log("removing note: ");
