@@ -4,13 +4,12 @@ import { useDispatch } from "react-redux";
 import { hideNewNote } from "../../../../store";
 import TextArea from "../../../UI/TextArea/TextArea";
 import styles from "./NewNote.module.css";
-import Input from "../../../UI/TextArea/TextArea";
+import Input from "../../../UI/Input/Input";
 export default function NewNote() {
   const dispatch = useDispatch();
-  const [value, setValue] = React.useState("");
-  const [title, setTitle] = React.useState("");
-  const handleClose = (event) => {
-    event.preventDefault();
+  const [value, setValue] = useState("");
+  const [title, setTitle] = useState("");
+  const handleClose = () => {
     dispatch(hideNewNote());
     console.log("close");
   };
@@ -23,6 +22,7 @@ export default function NewNote() {
     <form onSubmit={handleSave}>
       <div className={styles.main}>
         <h2>Paste your note here</h2>
+        Title:
         <Input
           type="text"
           spellcheck="false"
@@ -30,6 +30,7 @@ export default function NewNote() {
           onChange={(event) => setTitle(event.target.value)}
           className={styles.input}
         />
+        Text:
         <TextArea
           type="textarea"
           spellcheck="false"
