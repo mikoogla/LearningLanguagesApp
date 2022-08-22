@@ -56,7 +56,13 @@ export default function TextContent() {
   return (
     <Card className={styles.content}>
       <h1>{title}</h1>
-      <h2>Author info</h2>
+      <div className={styles.additionalInfo}>
+        <h2>additional info</h2>
+        <div className={styles.stats}>
+          <div style={{ color: "rgb(191, 243, 191)" }}>80%</div>
+          <div style={{ color: "rgb(240, 226, 149)" }}>20%</div>
+        </div>
+      </div>
       <Card className={styles.textcontainer}>{WordsToLinks(text)}</Card>
     </Card>
   );

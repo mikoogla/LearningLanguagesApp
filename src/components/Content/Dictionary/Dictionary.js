@@ -10,57 +10,6 @@ export default function Dictionary() {
       <h1>Dictionary</h1>
       <h2>Your words:</h2>
       <div className={styles.wordlist}>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
-        <div className="known" key={Math.random()}>
-          test
-        </div>
         {words.map((word) => (
           <div className={`${word.state}`} key={word.id}>
             {word.word}

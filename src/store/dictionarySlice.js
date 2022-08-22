@@ -12,6 +12,16 @@ const initial_dictionary = {
       word: "testword2",
       state: "uncertain",
     },
+    {
+      id: 3,
+      word: "testword3",
+      state: "known",
+    },
+    {
+      id: 4,
+      word: "testword4",
+      state: "uncertain",
+    },
   ],
 };
 
