@@ -16,7 +16,6 @@ export default function NewNote() {
   const handleSave = (event) => {
     event.preventDefault();
     dispatch(hideNewNote());
-    console.log("saving... title: ", title, "text: ", value);
     dispatch(addNote({ title: title, text: value }));
   };
   return (
@@ -26,7 +25,7 @@ export default function NewNote() {
         Title:
         <Input
           type="text"
-          spellcheck="false"
+          spellCheck="false"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
           className={styles.input}
@@ -34,7 +33,7 @@ export default function NewNote() {
         Text:
         <TextArea
           type="textarea"
-          spellcheck="false"
+          spellCheck="false"
           value={value}
           onChange={(event) => setValue(event.target.value)}
           className={styles.text}

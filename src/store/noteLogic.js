@@ -14,7 +14,6 @@ const noteSlice = createSlice({
   initialState: initial_state,
   reducers: {
     showNote: (state, action) => {
-      console.log("showing note: " + action.payload.title);
       state.currentNote = action.payload;
     },
     toggleNote: (state) => {

@@ -10,7 +10,6 @@ const noteSlice = createSlice({
   reducers: {
     addNote: (state, action) => {
       state.notes.push(action.payload);
-      console.log("new note added, title: " + action.payload.title);
     },
     removeNote: (state, action) => {
       console.log("removing note: ");

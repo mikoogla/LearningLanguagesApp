@@ -15,7 +15,6 @@
   background-color: #010409;
   color: #c9d1d9;
   border-color: #272727;
-  width: 50%;
 }
 .textcontainer {
   width: 90%;
@@ -36,4 +35,9 @@
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  .button {
+    width: 40%;
+  }
 }
