@@ -13,11 +13,19 @@
 .tt {
   display: flex;
   width: 50%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 @media (max-width: 768px) {
   .noteItem {
     flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .tt {
+    justify-content: center;
+    width: 100%;
+  }
+  .button {
+    width: 50%;
   }
 }
