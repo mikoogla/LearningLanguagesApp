@@ -26,6 +26,8 @@
   background-color: #070a10 !important;
   border: none;
   padding: 20px;
+  letter-spacing: 1px;
+  line-height: 25px;
   align-items: flex-start;
   word-wrap: break-word;
   white-space: pre-wrap;
