@@ -6,7 +6,7 @@ import Card from "../../UI/Card/Card";
 import NewNote from "./NewNote/NewNote";
 import NoteList from "./NoteList/NoteList";
 
-import styles from "./Styles.module.css";
+import styles from "./SavedNotes.module.css";
 
 export default function SavedNotes() {
   const dispatch = useDispatch();

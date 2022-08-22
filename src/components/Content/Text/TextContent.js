@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Card from "../../UI/Card/Card";
-import styles from "./Styles.module.css";
+import styles from "./TextContent.module.css";
 
 export default function TextContent() {
   const text = useSelector((state) => state.logic.currentNote.text).split(" ");
