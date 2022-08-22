@@ -1,6 +1,5 @@
 .content {
   min-width: 45vw;
-  max-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -17,6 +16,8 @@
   border-color: #272727;
 }
 .wordlist {
+  flex-basis: 0px;
+  flex-grow: 1;
   text-align: center;
   width: 90%;
   height: 100%;
