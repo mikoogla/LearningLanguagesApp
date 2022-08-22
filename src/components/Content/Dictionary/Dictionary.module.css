@@ -1,0 +1,43 @@
+.content {
+  min-height: 50vh;
+  max-height: 100vh;
+  min-width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  grid-gap: 15px;
+  margin: 2.5% 2.5vw;
+  padding: 20px 0 0 0;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  overflow: hidden;
+}
+.button {
+  background-color: #010409;
+  color: #c9d1d9;
+  border-color: #272727;
+}
+.wordlist {
+  text-align: center;
+  width: 90%;
+  min-height: 80%;
+  max-height: 100%;
+  overflow: auto;
+  background-color: #070a10 !important;
+  border: none;
+  padding: 20px;
+  align-items: flex-start;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+div[class="known"] {
+  color: #84fd8a;
+}
+div[class="uncertain"] {
+  color: #e7fd84;
+}
+@media (max-width: 768px) {
+  .button {
+    width: 40%;
+  }
+}
