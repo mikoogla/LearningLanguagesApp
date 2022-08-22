@@ -10,26 +10,23 @@ import styles from "./SavedNotes.module.css";
 
 export default function SavedNotes() {
   const dispatch = useDispatch();
-  const isHidden = useSelector((state) => state.logic.hide);
   const isNewNoteHidden = useSelector((state) => state.logic.hideNewNote);
   const notes = useSelector((state) => state.notes.notes);
   return (
-    !isHidden && (
-      <Card className={styles.content}>
-        <h2>Saved notes:</h2>
-        <div className={styles.notesContainer}>
-          <NoteList notes={notes} />
-        </div>
-        <Button
-          className={styles.button}
-          onClick={() => {
-            dispatch(hideNewNote());
-          }}
-        >
-          New Note
-        </Button>
-        {!isNewNoteHidden && <NewNote />}
-      </Card>
-    )
+    <Card className={styles.content}>
+      <h2>Saved notes:</h2>
+      <div className={styles.notesContainer}>
+        <NoteList notes={notes} />
+      </div>
+      <Button
+        className={styles.button}
+        onClick={() => {
+          dispatch(hideNewNote());
+        }}
+      >
+        New Note
+      </Button>
+      {!isNewNoteHidden && <NewNote />}
+    </Card>
   );
 }

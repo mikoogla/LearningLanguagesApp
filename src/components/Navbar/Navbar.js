@@ -2,12 +2,22 @@ import React from "react";
 import Button from "../UI/Button/Button";
 import styles from "./Navbar.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleNote } from "../../store/index.js";
+import { switchState } from "../../store/index.js";
 import Card from "../UI/Card/Card";
 
 export default function Navbar() {
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.logic.state);
 
+  const buttonText = () => {
+    if (state === "notes") {
+      return "Dictionary";
+    } else if (state === "dictionary") {
+      return "Hide";
+    } else {
+      return "Notes";
+    }
+  };
   return (
     <div className={styles.main}>
       <h3 className={styles.name}>Learning Languages App</h3>
@@ -15,11 +25,11 @@ export default function Navbar() {
         <Card className={styles.sum}>You know {535} words</Card>
         <Button
           onClick={() => {
-            dispatch(toggleNote());
+            dispatch(switchState());
           }}
           className={styles.button}
         >
-          Notes
+          {buttonText()}
         </Button>
       </div>
     </div>
