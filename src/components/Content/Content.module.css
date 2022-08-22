@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+  background-color: #010409;
+}
 .main {
   min-height: 100%;
   max-width: 100%;

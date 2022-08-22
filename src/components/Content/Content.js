@@ -7,8 +7,8 @@ export default function Content() {
   return (
     <div className={styles.main}>
       <TextContent />
-      <Dictionary />
       <SavedNotes />
+      <Dictionary />
     </div>
   );
 }

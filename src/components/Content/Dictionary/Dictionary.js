@@ -15,6 +15,50 @@ export default function Dictionary() {
             {word.word}
           </div>
         ))}
+
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
+
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
+
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
+
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
+        {words.map((word) => (
+          <div className={`${word.state}`} key={word.id}>
+            {word.word}
+          </div>
+        ))}
       </div>
     </Card>
   );

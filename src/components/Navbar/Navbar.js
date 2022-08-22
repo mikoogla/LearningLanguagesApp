@@ -21,7 +21,6 @@ export default function Navbar() {
         >
           Notes
         </Button>
-        <Button className={styles.button}>Dictionary</Button>
       </div>
     </div>
   );
