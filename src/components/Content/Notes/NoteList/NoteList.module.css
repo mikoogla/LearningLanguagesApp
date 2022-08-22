@@ -1,0 +1,23 @@
+.button {
+  background-color: #010409;
+  color: #c9d1d9;
+  border-color: #272727;
+}
+.noteItem {
+  width: 90%;
+  background-color: #01040981;
+  padding: 10px;
+
+  gap: 20px;
+}
+.tt {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .noteItem {
+    flex-direction: column-reverse;
+  }
+}

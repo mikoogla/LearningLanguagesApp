@@ -1,19 +1,19 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 import Card from "../../UI/Card/Card";
 import styles from "./Styles.module.css";
-import text from "../SampleText.js";
-const textSplitOnWords = text.split(" ");
 
 export default function TextContent() {
+  const text = useSelector((state) => state.logic.currentNote.text).split(" ");
+  const title = useSelector((state) => state.logic.currentNote.title);
   const wordHandler = (word) => {
     console.log(word.trim().replace(/[., ]/, "").toLowerCase());
   };
-  const WordsToLinks = () => {
+  const WordsToLinks = (nn) => {
     return (
       <>
         <div className={styles.xyz}>
-          {textSplitOnWords.map((word) => {
+          {nn.map((word) => {
             if (word === " " || word === "") return "";
             if (word.length % 2 === 0) {
               return (
@@ -55,9 +55,9 @@ export default function TextContent() {
 
   return (
     <Card className={styles.content}>
-      <h1>Ardenti Rubi</h1>
-      <h2>Liber Exodus</h2>
-      <Card className={styles.textcontainer}>{WordsToLinks()}</Card>
+      <h1>{title}</h1>
+      <h2>Author info</h2>
+      <Card className={styles.textcontainer}>{WordsToLinks(text)}</Card>
     </Card>
   );
 }
