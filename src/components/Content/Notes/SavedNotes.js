@@ -14,18 +14,22 @@ export default function SavedNotes() {
   const notes = useSelector((state) => state.notes.notes);
   return (
     <Card className={styles.content}>
-      <h2>Saved notes:</h2>
+      <div className={styles.top}>
+        <h2>Saved notes:</h2>
+        <Button
+          className={styles.button}
+          onClick={() => {
+            dispatch(hideNewNote());
+          }}
+        >
+          New Note
+        </Button>
+      </div>
+      {notes.length === 0 && <p>You have no saved notes.</p>}
+
       <div className={styles.notesContainer}>
         <NoteList notes={notes} />
       </div>
-      <Button
-        className={styles.button}
-        onClick={() => {
-          dispatch(hideNewNote());
-        }}
-      >
-        New Note
-      </Button>
       {!isNewNoteHidden && <NewNote />}
     </Card>
   );
