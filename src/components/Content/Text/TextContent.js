@@ -15,7 +15,7 @@ export default function TextContent() {
   const wordClickHandler = (word, state) => {
     const newWord = word
       .toLowerCase()
-      .replace(/[=:+-_.,'"'“”!?\s]/g, "")
+      .replace(/[()¿=:+-_.,'"'“”!?\s]/g, "")
       .trim();
     console.log(newWord);
     const newstate = () => {
@@ -39,7 +39,7 @@ export default function TextContent() {
             console.log("word: ", word);
             const newWord = word
               .toLowerCase()
-              .replace(/[=:+-_.,'"'“”!?\s]/g, "")
+              .replace(/[()¿=:+-_.,'"'“”!?\s]/g, "")
 
               .trim();
             let state = "1";
