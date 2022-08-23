@@ -4,7 +4,10 @@ import Card from "../../UI/Card/Card";
 import styles from "./TextContent.module.css";
 
 export default function TextContent() {
-  const text = useSelector((state) => state.logic.currentNote.text).split(" ");
+  const text = useSelector((state) => state.logic.currentNote.text)
+    .replace(/\n/g, " \n ")
+    .split(" ");
+
   const title = useSelector((state) => state.logic.currentNote.title);
   const wordHandler = (word) => {
     console.log(word.trim().replace(/[., ]/, "").toLowerCase());
