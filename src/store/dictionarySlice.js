@@ -1,28 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initial_dictionary = {
-  dictionary: [
-    {
-      id: 1,
-      word: "testword1",
-      state: "known",
-    },
-    {
-      id: 2,
-      word: "testword2",
-      state: "uncertain",
-    },
-    {
-      id: 3,
-      word: "testword3",
-      state: "known",
-    },
-    {
-      id: 4,
-      word: "testword4",
-      state: "uncertain",
-    },
-  ],
+  dictionary: [],
+  known: 0,
+  uncertain: 0,
 };
 
 const dictionarySlice = createSlice({
@@ -30,11 +11,20 @@ const dictionarySlice = createSlice({
   initialState: initial_dictionary,
   reducers: {
     addWord: (state, action) => {
-      state.dictionary.push({
-        id: state.dictionary.length + 1,
-        word: action.payload.word,
-        state: action.payload.state,
-      });
+      if (state.dictionary.map((e) => e.word).includes(action.payload.word)) {
+        console.log("word already exists");
+      } else {
+        state.dictionary.push({
+          id: state.dictionary.length + 1,
+          word: action.payload.word,
+          state: action.payload.state,
+        });
+        if (action.payload.state === "known") {
+          state.known += 1;
+        } else if (action.payload.state === "uncertain") {
+          state.uncertain += 1;
+        }
+      }
     },
     removeWord: (state, action) => {
       state.dictionary.splice(action.payload, 1);

@@ -10,50 +10,7 @@ export default function Dictionary() {
       <h1>Dictionary</h1>
       <h2>Your words:</h2>
       <div className={styles.wordlist}>
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
-
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
-
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
-
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
-
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
-        {words.map((word) => (
-          <div className={`${word.state}`} key={word.id}>
-            {word.word}
-          </div>
-        ))}
+        {words.length === 0 && <p>You have no words in your dictionary.</p>}
         {words.map((word) => (
           <div className={`${word.state}`} key={word.id}>
             {word.word}

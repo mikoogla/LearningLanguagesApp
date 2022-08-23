@@ -1,27 +1,34 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addWord } from "../../../store";
 import Card from "../../UI/Card/Card";
 import styles from "./TextContent.module.css";
 
 export default function TextContent() {
+  const dispatch = useDispatch();
   const text = useSelector((state) => state.logic.currentNote.text)
     .replace(/\n/g, " \n ")
     .split(" ");
 
   const title = useSelector((state) => state.logic.currentNote.title);
-  const wordHandler = (word) => {
-    console.log(word.trim().replace(/[., ]/, "").toLowerCase());
+  const wordClickHandler = (word) => {
+    const newWord = word.trim().replace(/[., ]/, "").toLowerCase();
+    console.log(newWord);
+    dispatch(addWord({ word: newWord, state: "known" }));
   };
-  const WordsToLinks = (nn) => {
+  const WordsToLinks = (word) => {
     return (
       <>
         <div className={styles.xyz}>
-          {nn.map((word) => {
+          {word.map((word) => {
             if (word === " " || word === "") return "";
             if (word.length % 2 === 0) {
               return (
                 <>
-                  <button className="known" onClick={() => wordHandler(word)}>
+                  <button
+                    className="known"
+                    onClick={() => wordClickHandler(word)}
+                  >
                     {word.trim()}{" "}
                   </button>
                   {word.includes("\n") && <br />}
@@ -33,7 +40,7 @@ export default function TextContent() {
                 <>
                   <button
                     className="uncertain"
-                    onClick={() => wordHandler(word)}
+                    onClick={() => wordClickHandler(word)}
                   >
                     {word.trim()}{" "}
                   </button>
@@ -43,7 +50,10 @@ export default function TextContent() {
             } else {
               return (
                 <>
-                  <button className="unknown" onClick={() => wordHandler(word)}>
+                  <button
+                    className="unknown"
+                    onClick={() => wordClickHandler(word)}
+                  >
                     {word.trim()}{" "}
                   </button>
                   {word.includes("\n") && <br />}
