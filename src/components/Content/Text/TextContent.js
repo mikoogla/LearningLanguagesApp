@@ -13,7 +13,10 @@ export default function TextContent() {
 
   const title = useSelector((state) => state.logic.currentNote.title);
   const wordClickHandler = (word, state) => {
-    const newWord = word.trim().replace(/[., ]/, "").toLowerCase();
+    const newWord = word
+      .toLowerCase()
+      .replace(/[=:+-_.,'"'“”!?\s]/g, "")
+      .trim();
     console.log(newWord);
     const newstate = () => {
       if (state === "known") {
@@ -33,7 +36,12 @@ export default function TextContent() {
         <div className={styles.xyz}>
           {word.map((word) => {
             if (word === " " || word === "") return "";
-            const newWord = word.trim().replace(/[., ]/, "").toLowerCase();
+            console.log("word: ", word);
+            const newWord = word
+              .toLowerCase()
+              .replace(/[=:+-_.,'"'“”!?\s]/g, "")
+
+              .trim();
             let state = "1";
 
             if (dictionary) {

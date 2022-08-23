@@ -4,7 +4,6 @@ const initial_dictionary = {
   dictionary: [],
   known: 0,
   uncertain: 0,
-  wordState: "unknown",
 };
 
 const dictionarySlice = createSlice({
@@ -56,4 +55,3 @@ const dictionarySlice = createSlice({
 });
 
 export default dictionarySlice;
-//export wordState;
