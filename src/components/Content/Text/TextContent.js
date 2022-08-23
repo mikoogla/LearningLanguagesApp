@@ -24,7 +24,7 @@ export default function TextContent() {
         return "known";
       }
     };
-
+    console.log("new state: ", newstate());
     dispatch(addWord({ word: newWord, state: newstate() }));
   };
   const WordsToLinks = (word) => {

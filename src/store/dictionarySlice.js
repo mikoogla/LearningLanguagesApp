@@ -12,8 +12,12 @@ const dictionarySlice = createSlice({
   initialState: initial_dictionary,
   reducers: {
     addWord: (state, action) => {
+      const index = state.dictionary
+        .map((e) => e.word)
+        .indexOf(action.payload.word);
       if (state.dictionary.map((e) => e.word).includes(action.payload.word)) {
         console.log("word already exists");
+        state.dictionary[index].state = action.payload.state;
       } else {
         state.dictionary.push({
           id: state.dictionary.length + 1,
