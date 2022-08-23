@@ -4,6 +4,7 @@ const initial_dictionary = {
   dictionary: [],
   known: 0,
   uncertain: 0,
+  wordState: "unknown",
 };
 
 const dictionarySlice = createSlice({
@@ -33,7 +34,22 @@ const dictionarySlice = createSlice({
       state.dictionary[action.payload.index].word = action.payload.word;
       state.dictionary[action.payload.index].state = action.payload.state;
     },
+    findWordState: (state, action) => {
+      if (state.dictionary !== undefined) {
+        const index = state.dictionary
+          .map((e) => e.word)
+          .indexOf(action.payload.word);
+        if (index !== -1) {
+          return state.dictionary[index].state;
+        } else {
+          return "unknown";
+        }
+      } else {
+        return "unknown";
+      }
+    },
   },
 });
 
 export default dictionarySlice;
+//export wordState;

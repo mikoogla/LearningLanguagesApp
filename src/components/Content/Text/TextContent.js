@@ -9,12 +9,23 @@ export default function TextContent() {
   const text = useSelector((state) => state.logic.currentNote.text)
     .replace(/\n/g, " \n ")
     .split(" ");
+  const dictionary = useSelector((state) => state.dictionary.dictionary);
 
   const title = useSelector((state) => state.logic.currentNote.title);
-  const wordClickHandler = (word) => {
+  const wordClickHandler = (word, state) => {
     const newWord = word.trim().replace(/[., ]/, "").toLowerCase();
     console.log(newWord);
-    dispatch(addWord({ word: newWord, state: "known" }));
+    const newstate = () => {
+      if (state === "known") {
+        return "uncertain";
+      } else if (state === "uncertain") {
+        return "unknown";
+      } else {
+        return "known";
+      }
+    };
+
+    dispatch(addWord({ word: newWord, state: newstate() }));
   };
   const WordsToLinks = (word) => {
     return (
@@ -22,44 +33,31 @@ export default function TextContent() {
         <div className={styles.xyz}>
           {word.map((word) => {
             if (word === " " || word === "") return "";
-            if (word.length % 2 === 0) {
-              return (
-                <>
-                  <button
-                    className="known"
-                    onClick={() => wordClickHandler(word)}
-                  >
-                    {word.trim()}{" "}
-                  </button>
-                  {word.includes("\n") && <br />}
-                </>
-              );
-            }
-            if (word.length % 5 === 0) {
-              return (
-                <>
-                  <button
-                    className="uncertain"
-                    onClick={() => wordClickHandler(word)}
-                  >
-                    {word.trim()}{" "}
-                  </button>
-                  {word.includes("\n") && <br />}
-                </>
-              );
+            const newWord = word.trim().replace(/[., ]/, "").toLowerCase();
+            let state = "1";
+
+            if (dictionary) {
+              const index = dictionary.map((e) => e.word).indexOf(newWord);
+              if (index !== -1) {
+                state = dictionary[index].state;
+              } else {
+                state = "unknown";
+              }
             } else {
-              return (
-                <>
-                  <button
-                    className="unknown"
-                    onClick={() => wordClickHandler(word)}
-                  >
-                    {word.trim()}{" "}
-                  </button>
-                  {word.includes("\n") && <br />}
-                </>
-              );
+              state = "unknown";
             }
+            console.log("state", state);
+            return (
+              <>
+                <button
+                  className={state}
+                  onClick={() => wordClickHandler(word, state)}
+                >
+                  {word.trim()}{" "}
+                </button>
+                {word.includes("\n") && <br />}
+              </>
+            );
           })}
         </div>
       </>
