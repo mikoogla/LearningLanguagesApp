@@ -1,0 +1,12 @@
+.textcontainer {
+  width: 90%;
+  min-height: 80%;
+  background-color: #01040981 !important;
+  border: none;
+  padding: 20px;
+  align-items: flex-start;
+  text-align: justify;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-indent: 15px;
+}

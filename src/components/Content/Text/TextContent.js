@@ -1,88 +1,28 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { addWord } from "../../../store";
+import { useSelector } from "react-redux";
+import Words from "./Words/Words";
 import Card from "../../UI/Card/Card";
 import styles from "./TextContent.module.css";
 
 export default function TextContent() {
-  const dispatch = useDispatch();
-  const text = useSelector((state) => state.logic.currentNote.text)
-    .replace(/\n/g, " \n ")
-    .split(" ");
-  const dictionary = useSelector((state) => state.dictionary.dictionary);
-
   const title = useSelector((state) => state.logic.currentNote.title);
-  const wordClickHandler = (word, state) => {
-    const newWord = word
-      .toLowerCase()
-      .replace(/[()¿=:+-_.,'"'“”!?\s]/g, "")
-      .trim();
-    console.log(newWord);
-    const newstate = () => {
-      if (state === "known") {
-        return "uncertain";
-      } else if (state === "uncertain") {
-        return "unknown";
-      } else {
-        return "known";
-      }
-    };
-    console.log("new state: ", newstate());
-    dispatch(addWord({ word: newWord, state: newstate() }));
-  };
-  const WordsToLinks = (word) => {
-    return (
-      <>
-        <div className={styles.xyz}>
-          {word.map((word) => {
-            if (word === " " || word === "") return "";
-            console.log("word: ", word);
-            const newWord = word
-              .toLowerCase()
-              .replace(/[()¿=:+-_.,'"'“”!?\s]/g, "")
-
-              .trim();
-            let state = "1";
-
-            if (dictionary) {
-              const index = dictionary.map((e) => e.word).indexOf(newWord);
-              if (index !== -1) {
-                state = dictionary[index].state;
-              } else {
-                state = "unknown";
-              }
-            } else {
-              state = "unknown";
-            }
-            console.log("state", state);
-            return (
-              <>
-                <button
-                  className={state}
-                  onClick={() => wordClickHandler(word, state)}
-                >
-                  {word.trim()}{" "}
-                </button>
-                {word.includes("\n") && <br />}
-              </>
-            );
-          })}
-        </div>
-      </>
-    );
-  };
-
+  const stats = useSelector((state) => state.counter);
+  const sum = stats.known + stats.uncertain + stats.unknown;
   return (
     <Card className={styles.content}>
       <h1>{title}</h1>
       <div className={styles.additionalInfo}>
         <h2>additional info</h2>
         <div className={styles.stats}>
-          <div style={{ color: "rgb(191, 243, 191)" }}>80%</div>
-          <div style={{ color: "rgb(240, 226, 149)" }}>20%</div>
+          <div style={{ color: "rgb(191, 243, 191)" }}>
+            {sum === 0 ? 0 : ((stats.known * 100) / sum).toFixed(0)}%
+          </div>
+          <div style={{ color: "rgb(240, 226, 149)" }}>
+            {sum === 0 ? 0 : ((stats.uncertain * 100) / sum).toFixed(0)}%
+          </div>
         </div>
       </div>
-      <Card className={styles.textcontainer}>{WordsToLinks(text)}</Card>
+      <Words />
     </Card>
   );
 }
