@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initial_state = {
-  //adding this instead of hide to toggle notes/dictionary in one button
   state: "notes",
   //state: "hide",
   //state: "dictionary",
