@@ -13,6 +13,7 @@ export default function WordItem(props) {
   const wordClickHandler = (word, state) => {
     dispatch(touch());
     const newWord = formatWord(word);
+    console.log("new word: " + newWord);
     const newstate = () => {
       if (state === "known") {
         return "uncertain";
@@ -29,7 +30,7 @@ export default function WordItem(props) {
     <>
       <button
         className={props.state}
-        onClick={() => wordClickHandler(props.word, props.state)}
+        onClick={() => wordClickHandler(props.word || "", props.state || "")}
       >
         {props.word}
       </button>

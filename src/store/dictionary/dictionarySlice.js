@@ -12,6 +12,9 @@ const dictionarySlice = createSlice({
   initialState: initial_dictionary,
   reducers: {
     addWord: (state, action) => {
+      if (state.dictionary === undefined) {
+        state.dictionary = [];
+      }
       const index = state.dictionary
         .map((e) => e.word)
         .indexOf(action.payload.word);

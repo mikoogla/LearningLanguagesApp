@@ -8,15 +8,15 @@ export const fetchDictionary = () => {
     const response = await fetch(
       "https://learningapp-8839c-default-rtdb.europe-west1.firebasedatabase.app/dictionary.json"
     );
-    const dictionary = (await response.json()) || [];
-    dispatch(replaceDictionary(dictionary));
+    const dictionary = await response.json();
+    dispatch(replaceDictionary(dictionary || []));
     dispatch(stopLoading());
   };
 };
 
 export const sendDictionary = (data) => {
   console.log("sending dictionary");
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     dispatch(startLoading());
     const response = await fetch(
       "https://learningapp-8839c-default-rtdb.europe-west1.firebasedatabase.app/dictionary.json",

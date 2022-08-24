@@ -10,13 +10,13 @@ export default function DictionarySync() {
   const touched = useSelector((state) => state.dictionary.touched);
   useEffect(() => {
     dispatch(fetchDictionary());
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     if (touched) {
-      dispatch(sendDictionary(dictionary));
+      dispatch(sendDictionary(dictionary || []));
     }
-  }, [dictionary, dispatch, touched]);
+  }, [dictionary.dictionary, dispatch]);
 
   return;
 }
