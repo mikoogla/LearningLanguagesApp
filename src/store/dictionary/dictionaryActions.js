@@ -18,7 +18,7 @@ export const sendDictionary = (data) => {
   console.log("sending dictionary");
   return async (dispatch) => {
     dispatch(startLoading());
-    const response = await fetch(
+    await fetch(
       "https://learningapp-8839c-default-rtdb.europe-west1.firebasedatabase.app/dictionary.json",
       {
         method: "PUT",
