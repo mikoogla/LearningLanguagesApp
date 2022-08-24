@@ -7,14 +7,14 @@ import {
 export default function DictionarySync() {
   const dispatch = useDispatch();
   const dictionary = useSelector((state) => state.dictionary.dictionary);
-
+  let prevent = 2;
   useEffect(() => {
     dispatch(fetchDictionary());
   }, [dispatch]);
 
   useEffect(() => {
     dispatch(sendDictionary(dictionary));
-  }, [dictionary, dispatch]);
+  }, [dictionary, dispatch, prevent]);
 
   return;
 }

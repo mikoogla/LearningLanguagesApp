@@ -15,7 +15,13 @@ const store = configureStore({
 export const { addNote, removeNote } = noteSlice.actions;
 export const { showNote, toggleNote, hideNewNote, switchState } =
   noteLogic.actions;
-export const { addWord, removeWord, updateWord, findWordState, wordState } =
-  dictionarySlice.actions;
+export const {
+  addWord,
+  removeWord,
+  updateWord,
+  findWordState,
+  wordState,
+  replaceDictionary,
+} = dictionarySlice.actions;
 export const { updateCounter } = counterSlice.actions;
 export default store;

@@ -14,7 +14,6 @@ const counterSlice = createSlice({
       state.known = action.payload.known;
       state.uncertain = action.payload.uncertain;
       state.unknown = action.payload.unknown;
-      console.log("counter updated");
     },
   },
 });

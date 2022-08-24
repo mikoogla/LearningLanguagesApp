@@ -17,4 +17,4 @@ const loaderSlice = createSlice({
   },
 });
 
-export const { startLoading } = loaderSlice.actions;
+export const { startLoading, stopLoading } = loaderSlice.actions;

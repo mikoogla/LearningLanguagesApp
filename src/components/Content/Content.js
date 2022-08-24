@@ -6,7 +6,6 @@ import SavedNotes from "./Notes/SavedNotes";
 import Dictionary from "./Dictionary/Dictionary";
 export default function Content() {
   const state = useSelector((state) => state.logic.state);
-  console.log("state", state);
   return (
     <div className={styles.main}>
       <TextContent />

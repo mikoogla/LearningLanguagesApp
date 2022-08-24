@@ -15,7 +15,7 @@ const dictionarySlice = createSlice({
         .map((e) => e.word)
         .indexOf(action.payload.word);
       if (state.dictionary.map((e) => e.word).includes(action.payload.word)) {
-        console.log("word already exists");
+        console.log("word already exists index: " + index);
         state.dictionary[index].state = action.payload.state;
       } else {
         state.dictionary.push({
