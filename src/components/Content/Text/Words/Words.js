@@ -58,11 +58,11 @@ export default function Words() {
             if (index !== -1) {
               state = dictionary[index].state;
               if (state === "known") {
-                stats.known++;
+                word !== "\n" && stats.known++;
               } else if (state === "uncertain") {
-                stats.uncertain++;
+                word !== "\n" && stats.uncertain++;
               } else if (state === "unknown") {
-                stats.unknown++;
+                word !== "\n" && stats.unknown++;
               }
             } else {
               state = "unknown";
