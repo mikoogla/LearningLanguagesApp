@@ -51,6 +51,9 @@ const dictionarySlice = createSlice({
         return "unknown";
       }
     },
+    replaceDictionary: (state, action) => {
+      state.dictionary = action.payload;
+    },
   },
 });
 
