@@ -6,7 +6,7 @@ import {
 } from "../store/dictionary/dictionaryActions";
 export default function DictionarySync() {
   const dispatch = useDispatch();
-  const dictionary = useSelector((state) => state.dictionary.dictionary);
+  const dictionary = useSelector((state) => state.dictionary);
   let prevent = 2;
   useEffect(() => {
     dispatch(fetchDictionary());
