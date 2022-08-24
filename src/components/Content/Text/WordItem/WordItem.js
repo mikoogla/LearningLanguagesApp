@@ -17,7 +17,7 @@ export default function WordItem(props) {
         return "uncertain";
       } else if (state === "uncertain") {
         return "unknown";
-      } else {
+      } else if (state === "unknown") {
         return "known";
       }
     };

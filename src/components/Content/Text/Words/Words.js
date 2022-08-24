@@ -28,8 +28,16 @@ export default function Words() {
         unknown: stats.unknown,
       })
     );
-    return () => {};
-  }, [dispatch, stats]);
+    return () => {
+      dispatch(
+        updateCounter({
+          known: stats.known,
+          uncertain: stats.uncertain,
+          unknown: stats.unknown,
+        })
+      );
+    };
+  }, [dispatch, stats, dictionary]);
   const formatWord = (word) => {
     return word
       .toLowerCase()
@@ -53,6 +61,8 @@ export default function Words() {
                 stats.known++;
               } else if (state === "uncertain") {
                 stats.uncertain++;
+              } else if (state === "unknown") {
+                stats.unknown++;
               }
             } else {
               state = "unknown";
