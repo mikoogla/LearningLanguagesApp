@@ -8,7 +8,7 @@ import Card from "../UI/Card/Card";
 export default function Navbar() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.logic.state);
-  const knownWords = useSelector((state) => state.dictionary.known);
+  const stats = useSelector((state) => state.counter);
 
   const buttonText = () => {
     if (state === "notes") {
@@ -23,7 +23,7 @@ export default function Navbar() {
     <div className={styles.main}>
       <h3 className={styles.name}>Learning Languages App</h3>
       <div className={styles.info}>
-        <Card className={styles.sum}>You know {knownWords} words</Card>
+        <Card className={styles.sum}>You know {stats.known} words</Card>
         <Button
           onClick={() => {
             dispatch(switchState());

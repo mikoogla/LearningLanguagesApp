@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addWord } from "../../../../store";
+import { addWord, touch } from "../../../../store";
 export default function WordItem(props) {
   const dispatch = useDispatch();
   const formatWord = (word) => {
@@ -11,6 +11,7 @@ export default function WordItem(props) {
   };
 
   const wordClickHandler = (word, state) => {
+    dispatch(touch());
     const newWord = formatWord(word);
     const newstate = () => {
       if (state === "known") {

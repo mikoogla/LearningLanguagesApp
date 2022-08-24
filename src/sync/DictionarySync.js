@@ -7,14 +7,16 @@ import {
 export default function DictionarySync() {
   const dispatch = useDispatch();
   const dictionary = useSelector((state) => state.dictionary);
-  let prevent = 2;
+  const touched = useSelector((state) => state.dictionary.touched);
   useEffect(() => {
     dispatch(fetchDictionary());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(sendDictionary(dictionary));
-  }, [dictionary, dispatch, prevent]);
+    if (touched) {
+      dispatch(sendDictionary(dictionary));
+    }
+  }, [dictionary, dispatch, touched]);
 
   return;
 }

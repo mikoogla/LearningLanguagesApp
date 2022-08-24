@@ -4,6 +4,7 @@ const initial_dictionary = {
   dictionary: [],
   known: 0,
   uncertain: 0,
+  touched: false,
 };
 
 const dictionarySlice = createSlice({
@@ -39,7 +40,13 @@ const dictionarySlice = createSlice({
     },
 
     replaceDictionary: (state, action) => {
-      state = action.payload;
+      state.dictionary = action.payload.dictionary;
+      state.known = action.payload.known;
+      state.uncertain = action.payload.uncertain;
+      state.touched = action.payload.touched;
+    },
+    touch: (state) => {
+      state.touched = true;
     },
   },
 });

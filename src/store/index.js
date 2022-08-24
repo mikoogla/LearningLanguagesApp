@@ -22,6 +22,7 @@ export const {
   findWordState,
   wordState,
   replaceDictionary,
+  touch,
 } = dictionarySlice.actions;
 export const { updateCounter } = counterSlice.actions;
 export default store;
