@@ -43,10 +43,10 @@ const dictionarySlice = createSlice({
     },
 
     replaceDictionary: (state, action) => {
-      state.dictionary = action.payload.dictionary;
-      state.known = action.payload.known;
-      state.uncertain = action.payload.uncertain;
-      state.touched = action.payload.touched;
+      state.dictionary = action.payload.dictionary || [];
+      state.known = action.payload.known || 0;
+      state.uncertain = action.payload.uncertain || 0;
+      state.touched = action.payload.touched || false;
     },
     touch: (state) => {
       state.touched = true;

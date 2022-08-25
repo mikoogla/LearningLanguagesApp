@@ -9,7 +9,11 @@ export const fetchDictionary = () => {
       "https://learningapp-8839c-default-rtdb.europe-west1.firebasedatabase.app/dictionary.json"
     );
     const dictionary = await response.json();
-    dispatch(replaceDictionary(dictionary || []));
+    if (dictionary === null) {
+      dispatch(replaceDictionary({ error: "No dictionary found" }));
+    } else {
+      dispatch(replaceDictionary(dictionary || []));
+    }
     dispatch(stopLoading());
   };
 };
@@ -22,7 +26,7 @@ export const sendDictionary = (data) => {
       "https://learningapp-8839c-default-rtdb.europe-west1.firebasedatabase.app/dictionary.json",
       {
         method: "PUT",
-        body: JSON.stringify(data || []),
+        body: JSON.stringify(data || { error: "no data" }),
       }
     );
     dispatch(stopLoading());

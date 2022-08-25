@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import Content from "./components/Content/Content";
 import Navbar from "./components/Navbar/Navbar";
 import styles from "./App.module.css";
@@ -12,13 +13,15 @@ function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.logic.state);
   const location = useLocation().pathname.replace(/[/]/g, "");
-  if (
-    location === "dictionary" ||
-    location === "notes" ||
-    location === "hide"
-  ) {
-    dispatch(setState(location));
-  }
+  useEffect(() => {
+    if (
+      location === "dictionary" ||
+      location === "notes" ||
+      location === "hide"
+    ) {
+      dispatch(setState(location));
+    }
+  }, []);
   return (
     <div className={styles.main}>
       <Switch>
