@@ -13,7 +13,7 @@ const store = configureStore({
 });
 
 export const { addNote, removeNote } = noteSlice.actions;
-export const { showNote, toggleNote, hideNewNote, switchState } =
+export const { showNote, toggleNote, hideNewNote, switchState, setState } =
   noteLogic.actions;
 export const {
   addWord,

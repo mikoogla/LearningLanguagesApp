@@ -37,6 +37,9 @@ const noteSlice = createSlice({
         state.state = "notes";
       }
     },
+    setState: (state, action) => {
+      state.state = action.payload;
+    },
   },
 });
 
