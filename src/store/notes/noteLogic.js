@@ -8,7 +8,7 @@ const initial_state = {
   hideNewNote: true,
   currentNote: {
     title: "No Text Selected",
-    text: "Your note will appear here.",
+    text: "Your note will appear here. Just add your first note and click show! :P",
   },
 };
 
