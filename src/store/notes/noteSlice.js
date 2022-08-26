@@ -15,6 +15,10 @@ const noteSlice = createSlice({
       console.log("removing note: ");
       state.notes.splice(action.payload, 1);
     },
+    replaceNotes: (state, action) => {
+      console.log("payload: ", action.payload);
+      state.notes = action.payload || [];
+    },
   },
 });
 

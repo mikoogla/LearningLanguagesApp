@@ -9,6 +9,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { setState } from "./store/index";
+import NotesSync from "./sync/NotesSync";
 function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.logic.state);
@@ -30,6 +31,7 @@ function App() {
           <header>
             <Navbar />
             <DictionarySync />
+            <NotesSync />
           </header>
           <main>
             <Content />
